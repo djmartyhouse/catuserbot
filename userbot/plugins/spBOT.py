@@ -26,6 +26,7 @@ from . import BOTLOG, BOTLOG_CHATID
         "usage": "{tr}ms",
     },
 )
+id_chat[]
 async def handler(ss, controllo=1):
     chat1 = ss.chat_id
     await edit_delete(ss, f"id chat spam salvato")
