@@ -26,17 +26,6 @@ from . import BOTLOG, BOTLOG_CHATID
         "usage": "{tr}ms",
     },
 )
-
-@catub.cat_cmd(
-    pattern="ss(?:\s|$)([\s\S]*)",
-    command=("ss", "tools"),
-    info={
-        "header": "Manda sticker",
-        "description": "Cambia sticker",
-        "usage": "{tr}ms",
-    },
-)
-
 async def handler(ss, controllo=1):
     id_chat=[]
     chat1 = ss.chat_id
