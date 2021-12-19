@@ -1,3 +1,4 @@
+
 import asyncio
 import re
 from telethon.errors import FloodWaitError
@@ -16,7 +17,7 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import InputStickerSetID
 from . import BOTLOG, BOTLOG_CHATID
 
-
+id_chat=[]
 @catub.cat_cmd(
     pattern=".save",
     command=("ss", "tools"),
