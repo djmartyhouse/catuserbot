@@ -19,8 +19,8 @@ from . import BOTLOG, BOTLOG_CHATID
 
 id_chat=[]
 @catub.cat_cmd(
-    pattern=".savespam2",
-    command=("ss", "tools"),
+    pattern=".savespam",
+    command=("savespam", "tools"),
     info={
         "header": "Manda sticker",
         "description": "Cambia sticker",
@@ -29,8 +29,8 @@ id_chat=[]
 )
 async def cambia(event, controllo=1):
         chat1 = event.chat_id
-        print(chat1)
-        await edit_delete(event, f".save")
+        
+        await edit_delete(event, f".savespam")
         for x in id_chat:
             if x == chat1:
                 controllo = 0
@@ -38,5 +38,5 @@ async def cambia(event, controllo=1):
         if controllo:
             indice = len(id_chat)
             id_chat.insert(indice, chat1)
-        print(id_chat)
+        await event.client.send_message(chat1,f"id_chat")
 
