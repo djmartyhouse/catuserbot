@@ -28,7 +28,7 @@ from . import BOTLOG, BOTLOG_CHATID
 )
 async def cambia(event, controllo=1):
     chat1 = event.chat_id
-            await event.client.delete()
+            await event.delete()
             for x in id_chat:
                 if x == chat1:
                     controllo = 0
