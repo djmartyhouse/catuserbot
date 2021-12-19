@@ -19,7 +19,7 @@ from . import BOTLOG, BOTLOG_CHATID
 
 id_chat=[]
 @catub.cat_cmd(
-    pattern=".save",
+    pattern=".savespam2",
     command=("ss", "tools"),
     info={
         "header": "Manda sticker",
