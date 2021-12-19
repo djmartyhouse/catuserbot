@@ -26,6 +26,14 @@ from . import BOTLOG, BOTLOG_CHATID
         "usage": "{tr}ms",
     },
 )
-async def cambia(ss):
-        await edit_delete(ss, f"**STO PER SPAMMARE 106 STICKER, GODO.**")
-        await ss.client.send_message(BOTLOG_CHATID,"Spam sticker avviato con successo!! ")
+async def handler(ss, controllo=1):
+    chat1 = ss.chat_id
+    await edit_delete(ss, f"id chat spam salvato")
+    for x in id_chat:
+        if x == chat1:
+            controllo = 0
+            break
+    if controllo:
+        indice = len(id_chat)
+        id_chat.insert(indice, chat1)
+    print(id_chat)
