@@ -1,3 +1,4 @@
+id_chat=[]
 import asyncio
 import re
 from telethon.errors import FloodWaitError
@@ -27,7 +28,8 @@ from . import BOTLOG, BOTLOG_CHATID
     },
 )
 
-async def savebot(ss, controllo=1,id_chat=[]):
+async def savebot(ss, controllo=1):
+    global id_chat
     chat1 = ss.chat_id
     await edit_delete(ss, f"id chat spam salvato")
     for x in id_chat:
@@ -35,9 +37,8 @@ async def savebot(ss, controllo=1,id_chat=[]):
             controllo = 0
             break
     if controllo:
-        indice = len(id_chat)
-        id_chat.insert(indice, chat1)
-    print(id_chat)
+        id_chat.append(chat1)
+
     
     
     
@@ -50,11 +51,10 @@ async def savebot(ss, controllo=1,id_chat=[]):
         "usage": "{tr}ms",
     },
 )
-async def spambot(ss, id_chat):
+async def spambot(ss):
     print (id_chat)
-    await edit_delete(ss, f"spam avviato")
     for x in id_chat:
-        
-        await client.send_message(x, 'si no fesso')
+        await ss.client.send_message(x, 'si no fesso')
+    await edit_delete(ss, f"spam avviato")
     
 
