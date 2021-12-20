@@ -50,5 +50,5 @@ async def handler(ss, controllo=1):
 )
 async def handler(ss, controllo=1):
     await edit_delete(ss, f"spam avviato")
-        for x in id_chat:
-            await client.send_message(x, 'si no fesso')
+    for x in id_chat:
+        await client.send_message(x, 'si no fesso')
