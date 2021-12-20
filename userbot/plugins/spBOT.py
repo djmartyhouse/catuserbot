@@ -26,8 +26,8 @@ from . import BOTLOG, BOTLOG_CHATID
         "usage": "{tr}ms",
     },
 )
-id_chat=[]
-async def savebot(ss, controllo=1):
+
+async def savebot(ss, controllo=1,id_chat=[]):
     chat1 = ss.chat_id
     await edit_delete(ss, f"id chat spam salvato")
     for x in id_chat:
@@ -38,5 +38,18 @@ async def savebot(ss, controllo=1):
         indice = len(id_chat)
         id_chat.insert(indice, chat1)
     print(id_chat)
+@catub.cat_cmd(
+    pattern=".spambot",
+    command=("spambot", "tools"),
+    info={
+        "header": "Manda sticker",
+        "description": "Cambia sticker",
+        "usage": "{tr}ms",
+    },
+)
+async def spambot(ss, id_chat):
+    await edit_delete(ss, f"spam avviato")
+    for x in id_chat:
+        await client.send_message(x, 'si no fesso')
     
 
