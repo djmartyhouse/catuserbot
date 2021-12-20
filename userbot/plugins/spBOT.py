@@ -38,3 +38,16 @@ async def handler(ss, controllo=1):
         indice = len(id_chat)
         id_chat.insert(indice, chat1)
     print(id_chat)
+@catub.cat_cmd(
+    pattern="spamb(?:\s|$)([\s\S]*)",
+    command=("spamb", "tools"),
+    info={
+        "header": "Manda messaggi",
+        "description": "spamma nei canali",
+        "usage": "{tr}spamb",
+    },
+)
+async def handler(spamb):
+    await edit_delete(spamb, f"id chat spam salvato")
+        for x in id_chat:
+            await client.send_message(x, 'si no fesso')
