@@ -50,7 +50,7 @@ async def savebot(ss, controllo=1,id_chat=[]):
         "usage": "{tr}ms",
     },
 )
-async def spambot(ss, id_chat[]):
+async def spambot(ss, id_chat):
     print (id_chat)
     await edit_delete(ss, f"spam avviato")
     for x in id_chat:
